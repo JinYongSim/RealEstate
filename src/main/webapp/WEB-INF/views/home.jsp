@@ -5,22 +5,12 @@
 <head>
 	<title>Home</title>
 </head>
-<script type="text/javascript"
-  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://geoapi.heartrails.com/api/geoapi.js"></script>
-<script type="text/javascript"
-  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://geoapi.heartrails.com/api/geoapi.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+</script>
 <body>
-
-<select id="geoapi-prefectures" name="geoapi-prefectures">
-  <option value="都道府県を選択してください">都道府県を選択してください</option>
-</select>
-<select id="geoapi-cities" name="geoapi-cities">
-  <option value="市区町村名を選択してください">市区町村名を選択してください</option>
-</select>
-<select id="geoapi-towns" name="geoapi-towns">
-  <option value="町域を選択してください">町域を選択してください</option>
-</select>
+	<form>
+	<a href="goInsertItem">매물등록</a>
+	</form>
 </body>
 </html>

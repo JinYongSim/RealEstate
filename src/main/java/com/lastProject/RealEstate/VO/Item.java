@@ -5,31 +5,35 @@ public class Item {
 	private String enterprise_ID;
 	private String forSale_Address;
 	private int forSale_Rent;
-	private String forSale_Picture;
 	private int forSale_Deposit;
 	private int forSale_Reward;
 	private String forSale_Option;
 	private String forSale_Subway;
 	private String forSale_Indate;
+	private String file_SaveName;
+	private String file_OriginName;
+	private String file_indate;
 	
 	public Item() {
 		
 	}
 
-	public Item(int forSale_Seq, String enterprise_ID, String forSale_Address, int forSale_Rent, String forSale_Picture,
-			int forSale_Deposit, int forSale_Reward, String forSale_Option, String forSale_Subway,
-			String forSale_Indate) {
+	public Item(int forSale_Seq, String enterprise_ID, String forSale_Address, int forSale_Rent, int forSale_Deposit,
+			int forSale_Reward, String forSale_Option, String forSale_Subway, String forSale_Indate,
+			String file_SaveName, String file_OriginName, String file_indate) {
 		super();
 		this.forSale_Seq = forSale_Seq;
 		this.enterprise_ID = enterprise_ID;
 		this.forSale_Address = forSale_Address;
 		this.forSale_Rent = forSale_Rent;
-		this.forSale_Picture = forSale_Picture;
 		this.forSale_Deposit = forSale_Deposit;
 		this.forSale_Reward = forSale_Reward;
 		this.forSale_Option = forSale_Option;
 		this.forSale_Subway = forSale_Subway;
 		this.forSale_Indate = forSale_Indate;
+		this.file_SaveName = file_SaveName;
+		this.file_OriginName = file_OriginName;
+		this.file_indate = file_indate;
 	}
 
 	public int getForSale_Seq() {
@@ -62,14 +66,6 @@ public class Item {
 
 	public void setForSale_Rent(int forSale_Rent) {
 		this.forSale_Rent = forSale_Rent;
-	}
-
-	public String getForSale_Picture() {
-		return forSale_Picture;
-	}
-
-	public void setForSale_Picture(String forSale_Picture) {
-		this.forSale_Picture = forSale_Picture;
 	}
 
 	public int getForSale_Deposit() {
@@ -112,13 +108,40 @@ public class Item {
 		this.forSale_Indate = forSale_Indate;
 	}
 
+	public String getFile_SaveName() {
+		return file_SaveName;
+	}
+
+	public void setFile_SaveName(String file_SaveName) {
+		this.file_SaveName = file_SaveName;
+	}
+
+	public String getFile_OriginName() {
+		return file_OriginName;
+	}
+
+	public void setFile_OriginName(String file_OriginName) {
+		this.file_OriginName = file_OriginName;
+	}
+
+	public String getFile_indate() {
+		return file_indate;
+	}
+
+	public void setFile_indate(String file_indate) {
+		this.file_indate = file_indate;
+	}
+
 	@Override
 	public String toString() {
 		return "Item [forSale_Seq=" + forSale_Seq + ", enterprise_ID=" + enterprise_ID + ", forSale_Address="
-				+ forSale_Address + ", forSale_Rent=" + forSale_Rent + ", forSale_Picture=" + forSale_Picture
-				+ ", forSale_Deposit=" + forSale_Deposit + ", forSale_Reward=" + forSale_Reward + ", forSale_Option="
-				+ forSale_Option + ", forSale_Subway=" + forSale_Subway + ", forSale_Indate=" + forSale_Indate + "]";
+				+ forSale_Address + ", forSale_Rent=" + forSale_Rent + ", forSale_Deposit=" + forSale_Deposit
+				+ ", forSale_Reward=" + forSale_Reward + ", forSale_Option=" + forSale_Option + ", forSale_Subway="
+				+ forSale_Subway + ", forSale_Indate=" + forSale_Indate + ", file_SaveName=" + file_SaveName
+				+ ", file_OriginName=" + file_OriginName + ", file_indate=" + file_indate + "]";
 	}
+
+	
 	
 	
 }
