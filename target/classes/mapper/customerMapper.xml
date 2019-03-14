@@ -6,4 +6,55 @@
   <!-- 게시판 처리 SQL -->
 <mapper namespace="com.lastProject.RealEstate.DAO.customerMapper"> <!-- 인터페이스의 경로 -->
 	
+<!-- 회원가입 : Code here -->
+<insert id="signup" parameterType="Customer">
+INSERT INTO CUSTOMER(
+
+	 CUSTOMER_ID
+	,CUSTOMER_PW
+	,CUSTOMER_NAME
+	,CUSTOMER_ADDRESS
+	,CUSTOMER_BIRTHDATE
+	,CUSTOMER_NICKNAME
+	,CUSTOMER_PHONE
+	,CUSTOMER_GENDER
+	,CUSTOMER_EMAIL
+
+)VALUES(
+	
+	 #{customer_id}
+	,#{customer_pw}
+	,#{customer_name}
+	,#{customer_address}
+	,#{customer_birthdate}
+	,#{customer_nickname}
+	,#{customer_phone}
+	,#{customer_gender}
+	,#{customer_email}
+
+)
+
+</insert>
+<!-- 회원가입시 아이디 중복체크 -->
+<select id="checkid" resultType="Customer">
+SELECT
+	CUSTOMER_ID
+FROM
+	CUSTOMER
+
+</select> 
+
+<!-- 로그인 -->
+<select id="login" resultType="Customer" parameterType="Customer">
+SELECT
+	 CUSTOMER_ID
+	,CUSTOMER_PW
+FROM
+	CUSTOMER
+WHERE
+	CUSTOMER_ID=#{customer_id}
+	AND
+	CUSTOMER_PW=#{customer_pw}
+</select>	
+	
 </mapper>

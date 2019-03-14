@@ -12,5 +12,16 @@
 	<form>
 	<a href="goInsertItem">매물등록</a>
 	</form>
+	
+<c:if test="${sessionScope.loginId==null}">
+<a href="signupgo">고객 회원가입</a><br><br>
+<a href="logingo">고객 로그인</a>
+</c:if>
+
+<c:if test="${sessionScope.loginId!=null}">
+<a href="logout">고객 로그아웃</a>
+</c:if>
+	
+	
 </body>
 </html>
