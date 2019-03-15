@@ -10,4 +10,6 @@ public interface AdminMapper {
 	public Admin adminLogin(Admin admin); //로그인
 	
 	public ArrayList<Customer> customerGenderStats();
+	
+	public ArrayList<Customer> customerAgeStats();
 }

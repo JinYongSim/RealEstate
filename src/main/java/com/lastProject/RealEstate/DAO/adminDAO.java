@@ -37,4 +37,16 @@ public class AdminDAO {
 		}
 		return cList;
 	}
+	
+	//고객 나이대 통계 출력
+	public ArrayList<Customer> customerAgeStats(){
+		AdminMapper map = sqlSession.getMapper(AdminMapper.class);
+		ArrayList<Customer> cList = new ArrayList<Customer>();
+		try {
+			cList = map.customerAgeStats();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return cList;
+	}
 }

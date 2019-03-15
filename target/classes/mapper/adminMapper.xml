@@ -29,4 +29,11 @@
 		GROUP BY
 			CUSTOMER_GENDER
 	</select>
+	
+	<select id="customerAgeStats" resultType = "Customer">
+		SELECT
+			TRUNC(MONTHS_BETWEEN(SYSDATE, CUSTOMER_BIRTHDATE) / 12) AS stats_Count
+		FROM
+			CUSTOMER
+	</select>
 </mapper>

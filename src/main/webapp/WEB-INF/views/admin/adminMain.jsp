@@ -24,12 +24,12 @@
 	} 
 	#midLeft{
 		height: 50%;
-		width : 20%;
+		width : 25%;
 		float: left;
 	}
 	#midRight{
 		height: 50%;
-		width: 80%;
+		width: 75%;
 		float: right;
 		text-align: center;
 	}
@@ -69,8 +69,16 @@
          $(this).next("ul").toggleClass("hide2");
      });
 	
-	 $("#customer1").on("click", function(){
+	 $("#customer1-1").on("click", function(){
 		 customerGenderStats();
+	 })
+	 
+	 $("#customer1-2").on("click", function(){
+		 customerAgeStats();
+	 })
+	 
+	  $("#customer1-2").on("click", function(){
+		 allCustomerPrint();
 	 })
  })
  
@@ -114,10 +122,59 @@ function customerGenderStats(){
 				data.push( {label: item.customer_Gender, value: item.stats_Count});
 			})
 			  new Morris.Donut({
-		            element: 'midRight',
-		            data: data
+		            element: "midRight",
+		            data: data,
+		            colors: ['blue','red']
 		        });
 		}
+	})
+}
+
+function  customerAgeStats(){
+	$("#midRight").empty();
+	$("#midRight").html("고객연령대그래프");
+	$.ajax({
+		url: "customerAgeStats"
+		,data:{}
+		,type: "post"
+		,success: function(list){
+			var data = [];
+			var age10 = 0;
+			var age20 = 0;
+			var age30 = 0;
+			var age40 = 0;
+			var age50 = 0;
+			
+			$.each(list, function(index,item){
+				data.push(item.stats_Count);
+				if (data[index] <20) {
+					age10 = (age10)+1;
+				} else if (data[index] <30 && data[index] >19 ){
+					age20 =(age20)+1;
+				} else if(data[index] <40 && data[index] >29 ){
+					age30 =(age30)+1;
+				} else if(data[index] <50 && data[index] >39 ){
+					age40 =(age40)+1;
+				} else{
+					age50 =(age50)+1;
+				}
+			})
+			  new Morris.Bar({
+		        	element: "midRight",
+		        	data: [
+		        		    { y: '1~19세', a: age10},
+		        		    { y: '20~29세', a: age20},
+		        		    { y: '30~39세', a: age30},
+		        		    { y: '40~49세', a: age40},
+		        		    { y: '50세~', a: age50},
+		        		  ],   
+		        		  xkey: 'y',
+		        		  ykeys: ['a'],
+		        		  labels: ['인원수'],
+			  			  gredTextSize: 15,
+			  			  barColors: ['blue']
+		        });
+		} //function
 	})
 }
 </script>
@@ -180,10 +237,16 @@ function customerGenderStats(){
                 <li>
                 	<a href = "#">회원통계</a>
                 		<ul class = "hide2">
-                			<li><a href = "#" id = "customer1">성별통계</a></li>
+                			<li><a href = "#" id = "customer1-1">성별통계</a></li>
+                			<li><a href = "#" id = "customer1-2">연령대통계</a></li>
                 		</ul>
                 </li>
-                <li>메뉴1-2</li>
+                <li>
+                	<a href = "#">회원리스트</a>
+                		<ul class = "hide2">
+                			<li><a href = "#" id = "customer2-1">전체리스트</a></li>
+                		</ul>
+                </li>
                 <li>메뉴1-3</li>
                 <li>메뉴1-4</li>
                 <li>메뉴1-5</li>
@@ -194,7 +257,12 @@ function customerGenderStats(){
         <li class="menu">
             <a href = "#">기업관리메뉴</a>
             <ul class="hide">
-                <li>메뉴2-1</li>
+                <li>
+                	<a href = "#">기업통계</a>
+                		<ul class = "hide2">
+                			<li><a href = "#" id = "customer1">업체종류별통계</a></li>
+                		</ul>
+                </li>
                 <li>메뉴2-2</li>
                 <li>메뉴2-3</li>
                 <li>메뉴2-4</li>

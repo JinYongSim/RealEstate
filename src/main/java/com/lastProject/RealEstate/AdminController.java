@@ -60,4 +60,15 @@ public class AdminController {
 		}
 		return cList;
 	}
+	
+	@RequestMapping(value = "/customerAgeStats", method = RequestMethod.POST)
+	public @ResponseBody ArrayList<Customer> customerAgeStats(){
+		ArrayList<Customer> cList = new ArrayList<Customer>();
+		try {
+			cList = dao.customerAgeStats();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return cList;
+	}
 }
