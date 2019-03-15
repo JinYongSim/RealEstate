@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.lastProject.RealEstate.VO.Customer;
 
-public interface customerMapper {
+public interface CustomerMapper {
 
     public int signup(Customer c);
 	

@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <!-- 게시판 처리 SQL -->
-<mapper namespace="com.lastProject.RealEstate.DAO.customerMapper"> <!-- 인터페이스의 경로 -->
+<mapper namespace="com.lastProject.RealEstate.DAO.CustomerMapper"> <!-- 인터페이스의 경로 -->
 	
 <!-- 회원가입 : Code here -->
 <insert id="signup" parameterType="Customer">
@@ -22,15 +22,15 @@ INSERT INTO CUSTOMER(
 
 )VALUES(
 	
-	 #{customer_id}
-	,#{customer_pw}
-	,#{customer_name}
-	,#{customer_address}
-	,#{customer_birthdate}
-	,#{customer_nickname}
-	,#{customer_phone}
-	,#{customer_gender}
-	,#{customer_email}
+	 #{customer_ID}
+	,#{customer_PW}
+	,#{customer_Name}
+	,#{customer_Address}
+	,#{customer_Birthdate}
+	,#{customer_Nickname}
+	,#{customer_Phone}
+	,#{customer_Gender}
+	,#{customer_Email}
 
 )
 
@@ -52,9 +52,9 @@ SELECT
 FROM
 	CUSTOMER
 WHERE
-	CUSTOMER_ID=#{customer_id}
+	CUSTOMER_ID=#{customer_ID}
 	AND
-	CUSTOMER_PW=#{customer_pw}
+	CUSTOMER_PW=#{customer_PW}
 </select>	
 	
 </mapper>

@@ -14,7 +14,7 @@
 	$("#customer_pw").on("keyup",length);//비밀번호 길이
 	$("#customer_name").on("keyup",hangl);//한글 유효성검사
 	$("#signup").on("click",btn);//회원가입버튼시 유효성검사
-	$("#")
+	
 	});
 		
     function idcheck(){//아이디 유효성검사
@@ -161,48 +161,48 @@ div#message {
 	<table>
 	<tr>
 		<td>희망아이디</td>
-		<td><input type="text" id="customer_id" name="customer_id" placeholder="3~10 자리 ID 입력" /><b id="duplicatemessage"></b>
+		<td><input type="text" id="customer_id" name="customer_ID" placeholder="3~10 자리 ID 입력" /><b id="duplicatemessage"></b>
 		</td>
 	</tr>
 	<tr>
 		<td>비밀번호</td>
-		<td><input type="password" id="customer_pw" name="customer_pw" placeholder="3~10자리 비밀번호 입력" /><b id="li"></b></td>
+		<td><input type="password" id="customer_pw" name="customer_PW" placeholder="3~10자리 비밀번호 입력" /><b id="li"></b></td>
 	</tr>
 	<tr>
 		<td>이름</td>
-		<td><input type="text" id="customer_name" name="customer_name" /><b id="lu"></b>
+		<td><input type="text" id="customer_name" name="customer_Name" /><b id="lu"></b>
 		</td>
 	</tr>
 	<tr>
 		<td>주소</td>
-		<td><input type="text" id="customer_address" name="customer_address" />
+		<td><input type="text" id="customer_address" name="customer_Address" />
 		</td>
 	</tr>
 	<tr>
 		<td>생년월일</td>
-		<td><input type="date" id="customer_birthdate" name="customer_birthdate"/>
+		<td><input type="date" id="customer_birthdate" name="customer_Birthdate"/>
 		</td>
 	</tr>
 	<tr>
 		<td>닉네임</td>
-		<td><input type="text" id="customer_nickname" name="customer_nickname"/>
+		<td><input type="text" id="customer_nickname" name="customer_Nickname"/>
 		</td>
 	</tr>
 	<tr>
 		<td>핸드폰번호</td>
-		<td><input type="text" id="customer_phone" name="customer_phone" >
+		<td><input type="text" id="customer_phone" name="customer_Phone" >
 		</td>
 	</tr>
 	<tr>
 		<td>성별</td>
-		<td><input type="radio" id="customer_gender" name="customer_gender" value="남" checked/>남자
-		    <input type="radio" id="customer_gender" name="customer_gender" value="여" />여자
+		<td><input type="radio" id="customer_gender" name="customer_Gender" value="남" checked/>남자
+		    <input type="radio" id="customer_gender" name="customer_Gender" value="여" />여자
 		</td>
 	</tr>
 	<tr>
 		<td>이메일</td>
 		<td>
-			<input type="text" id="customer_email" name="customer_email" >
+			<input type="text" id="customer_email" name="customer_Email" >
 		</td>
 	</tr>
 	

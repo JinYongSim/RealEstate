@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.lastProject.RealEstate.DAO.customerDAO;
+import com.lastProject.RealEstate.DAO.CustomerDAO;
 import com.lastProject.RealEstate.VO.Customer;
 
 
@@ -21,12 +21,12 @@ import com.lastProject.RealEstate.VO.Customer;
 public class CustomerController {
 
      @Autowired
-	 customerDAO dao;
+	 CustomerDAO dao;
      
      @RequestMapping(value="/signupgo",method=RequestMethod.GET)
  	public String signupgo() {
  		
- 		return "signupgo";
+ 		return "customer/signupgo";
  	}
  	@RequestMapping(value="/signup",method=RequestMethod.POST)
  	public String signup(Customer c,Model model,HttpSession session) {
@@ -41,7 +41,7 @@ public class CustomerController {
  		ArrayList<Customer> list=dao.checkid();	
  		for (Customer customer : list) {
  			
- 			if (customer_id.equals(customer.getCustomer_id())) {
+ 			if (customer_id.equals(customer.getCustomer_ID())) {
  				return "duplicated";
  			}
  		
@@ -59,14 +59,14 @@ public class CustomerController {
 			session.setAttribute("loginId",c);
 		}else {
 			model.addAttribute("message","아이디나 비밀번호가 틀렸습니다");
-			return "logingo";
+			return "customer/logingo";
 		}
 	    
 		return "home";
 	}
 	@RequestMapping(value="/logingo",method=RequestMethod.GET)
 	public String logingo() {
-		return "logingo";
+		return "customer/logingo";
 	}
 	
 	@RequestMapping(value="/logout",method=RequestMethod.GET)

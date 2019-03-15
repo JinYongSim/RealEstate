@@ -4,6 +4,29 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <!-- 게시판 처리 SQL -->
-<mapper namespace="com.lastProject.RealEstate.DAO.adminMapper"> <!-- 인터페이스의 경로 -->
+<mapper namespace="com.lastProject.RealEstate.DAO.AdminMapper"> <!-- 인터페이스의 경로 -->
+	<select id="adminLogin" parameterType = "Admin" resultType = "Admin">
+		SELECT
+			ADMIN_ID
+			,ADMIN_PW
+			,ADMIN_NAME
+			,ADMIN_DEPARTMENT
+			,ADMIN_TITLE
+		FROM
+			ADMIN
+		WHERE
+			ADMIN_ID = #{admin_ID}
+		AND
+			ADMIN_PW = #{admin_PW}
+	</select>
 	
+	<select id="customerGenderStats" resultType = "Customer">
+		SELECT
+			COUNT(CUSTOMER_GENDER) AS stats_Count
+			,CUSTOMER_GENDER
+		FROM
+			CUSTOMER
+		GROUP BY
+			CUSTOMER_GENDER
+	</select>
 </mapper>

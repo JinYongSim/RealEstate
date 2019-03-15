@@ -7,12 +7,13 @@
 		<typeAlias type="com.lastProject.RealEstate.VO.Customer" alias="Customer" />
 		<typeAlias type="com.lastProject.RealEstate.VO.Item" alias="Item" />
 		<typeAlias type="com.lastProject.RealEstate.VO.Enterprise" alias="Enterprise" />
+		<typeAlias type="com.lastProject.RealEstate.VO.Admin" alias="Admin" />
 		<typeAlias type="java.util.HashMap" alias="Hmap"/>
 		
 	</typeAliases>
 	<mappers>
-		<mapper resource="mapper/adminMapper.xml" />
-		<mapper resource="mapper/customerMapper.xml" />
-		<mapper resource="mapper/enterpriseMapper.xml" />
+		<mapper resource="mapper/AdminMapper.xml" />
+		<mapper resource="mapper/CustomerMapper.xml" />
+		<mapper resource="mapper/EnterpriseMapper.xml" />
 	</mappers>
 </configuration>

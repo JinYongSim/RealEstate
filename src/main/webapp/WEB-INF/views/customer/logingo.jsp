@@ -46,12 +46,12 @@ div#message {
 <table>
 <tr>
 	<td>아이디</td>
-	<td><input type="text" id="customer_id" name="customer_id" placeholder="3~10 자리 ID 입력" />
+	<td><input type="text" id="customer_id" name="customer_ID" placeholder="3~10 자리 ID 입력" />
 	</td>
 </tr>
 <tr>
 	<td>비밀번호</td>
-	<td><input type="password" id="customer_pw" name="customer_pw" placeholder="3~10자리 비밀번호 입력"></td>
+	<td><input type="password" id="customer_pw" name="customer_PW" placeholder="3~10자리 비밀번호 입력"></td>
 </tr>
 <tr>
 	<td colspan="2" >
